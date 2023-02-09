@@ -3,9 +3,9 @@ package org.example;
 public class Main {
     public static void main(String[] args) {
 
-        AviaCompany aviaCompany = new AviaCompany(6l,"SomeCompany");
+        AviaCompany aviaCompany = new AviaCompany(6L,"SomeCompany");
         AirTravel airTravel = new AirTravel();
-//        airTravel.registration(aviaCompany);
-        airTravel.getPassenger("Bruce Willis");
+//        airTravel.addNewCompany(aviaCompany); данная компания уже добавлена в список
+        airTravel.getPassengerInfo("Bruce Willis");
     }
 }

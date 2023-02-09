@@ -16,7 +16,7 @@ public class AirTravel {
         }
         return conn;
     }
-    public boolean registration(AviaCompany aviaCompany) {
+    public boolean addNewCompany(AviaCompany aviaCompany) {
         Boolean success = true;
         String SQL = "insert into \"Company\"(id, name)\n" +
                 "values (?,?);";
@@ -43,7 +43,7 @@ public class AirTravel {
         return success;
     }
 
-    public void getPassenger(String name) {
+    public void getPassengerInfo(String name) {
 
         String SQL = "select distinct  C.name, \"Trip\".plane,P.name,Pit.place,\"Trip\".town_from,\"Trip\".town_to\n" +
                 "from \"Trip\"\n" +
