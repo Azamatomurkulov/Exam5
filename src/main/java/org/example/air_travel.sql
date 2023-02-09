@@ -197,4 +197,10 @@ from   "Pass_in_trip"
 group by "Pass_in_trip".passenger_id, P.name
 having count("Pass_in_trip".trip_id)>0;--#19 Вывести отсортированный по количеству перелетов (по убыванию) и имени (по возрастанию) список пассажиров, совершивших хотя бы 1 полет.
 
+select Distinct C.name, "Trip".town_from, "Trip".town_to,count(C.id) as Flight_count
+from "Trip"
+         join "Company" C on C.id = "Trip".company_id
+where town_from = 'Rostov' and town_to = 'Moscow'
+group by "Trip".town_to, "Trip".town_from, C.name;--#20 Сколько рейсов совершили авиакомпании с Ростова (Rostov) в Москву (Moscow) ?
+
 delete from "Trip" where town_to = 'Moscow';--#21 Удалить все перелеты, совершенные из Москвы (Moscow).
